@@ -1,0 +1,18 @@
+<div>
+  {{#each posts as |post|}}
+  <div class='card'>
+    <div>
+        <h3>{{post.post_name}}, {{post.user.username}}{{post.current_date}}</h3>
+    </div>
+    <div>
+        <p>{{post.post_content}}</p>
+    </div>
+  </div>
+  <div> 
+     <button type="submit" class="btn btn-primary">Update</button>
+  </div>
+  <div>
+     <button type="submit" class="btn btn-primary">Delete</button>
+  </div>
+  {{/each}}
+</div>

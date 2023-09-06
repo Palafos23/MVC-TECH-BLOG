@@ -1,0 +1,16 @@
+<div>
+    <div>
+        <h1>Tech Blog</h1>
+    </div>
+</div>
+
+{{#each posts as |post|}}
+<div class='card'>
+    <div>
+        <h3>{{post.post_name}}, {{post.user.username}}{{post.current_date}}</h3>
+    </div>
+    <div>
+        <p>{{post.post_content}}</p>
+    </div>
+</div>
+{{/each}}
