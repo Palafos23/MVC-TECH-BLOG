@@ -34,7 +34,7 @@ router.delete('/:id', async (req, res) => {
           }
         });
         if(!comment) {
-          res.status(404).json({ message: 'No tag found with inputed id'});
+          res.status(404).json({ message: 'No comment found with inputed id'});
           return;
         }
         res.status(200).json(comment);
