@@ -1,20 +1,21 @@
-<div>
   {{#each posts as |post|}}
   <div class='card'>
-    <div>
-        <h3 id="post-name">{{post.post_name}}, {{post.user.username}}{{post.current_date}}</h3>
+    <header class="card-header">
+        <p class="card-header-title">{{post.post_name}}, {{post.user.username}}{{post.current_date}}</p>
+    </header>
+    <div class="card-content">
+        <p>{{post.post_content}}</p>
     </div>
-    <div>
-        <p id="post-content">{{post.post_content}}</p>
-    </div>
-  </div>
-  <div class="delete"> 
-     <button type="submit" class="btn btn-primary">Update</button>
-  </div>
-  <div class="update">
-     <button type="submit" class="btn btn-primary">Delete</button>
+    <footer class="card-footer">
+      <div class="card-footer-delete"> 
+        <button type="submit" class="btn btn-primary">Update</button>
+      </div>
+      <div class="card-footer-update">
+        <button type="submit" class="btn btn-primary">Delete</button>
+      </div>
+    </footer>
   </div>
   {{/each}}
-</div>
 
-<script src="./js/post.js"></script>
+
+<script src="../public/js/post.js"></script>

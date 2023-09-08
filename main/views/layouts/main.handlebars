@@ -5,18 +5,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tech Blog!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
 </head>
 
 <body>
   <div>
     <header>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/dashboard">DashBoard</a>
+      <nav class="navbar">
+        <a class="navbar-item" href="/">Home</a>
+        <a class="navbar-item" href="/dashboard">DashBoard</a>
         {{#if logged_in}}
         <button class="no-button" id="logout">logout</button>
         {{else}}
-        <a href="/login">Login</a>
+        <a class="navbar-item" href="/login">Login</a>
         {{/if}}
       </nav>
       <h1>
@@ -26,12 +27,9 @@
     <main>
       {{{ body }}}
     </main>
-    <footer>
-      
-    </footer>
   </div>
   {{#if logged_in}}
-  <script src="/js/logout.js"></script>
+  <script src="../../public/js/logout.js"></script>
   {{/if}}
 </body>
 

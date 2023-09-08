@@ -1,8 +1,8 @@
 const postFormHandler = async (event) => {
     event.preventDefault();
 
-    const postName = document.querySelector('#post-name').value.trim();
-    const postContent = document.querySelector('#post-content').value.trim();
+    const postName = document.querySelector('.card-header').value.trim();
+    const postContent = document.querySelector('.card-content').value.trim();
 
     if (postName && postContent) {
         const response = await fetch('/api/post', {
@@ -18,7 +18,7 @@ const postFormHandler = async (event) => {
         }
     }
 }
-const delButtonHandler = async (event) => {
+const deleteButtonHandler = async (event) => {
     if (event.target.hasAttribute('data-id')) {
       const id = event.target.getAttribute('data-id');
   
@@ -38,7 +38,7 @@ const updateButtonHandler = async (event) => {
       const id = event.target.getAttribute('data-id');
   
       const response = await fetch(`/api/post/${id}`, {
-        method: 'UPDATE',
+        method: 'PUT',
       });
   
       if (response.ok) {
@@ -54,10 +54,10 @@ const updateButtonHandler = async (event) => {
   .addEventListener('submit', postFormHandler);
 
   document
-  .querySelector('.delete')
-  .addEventListener('click', delButtonHandler);
+  .querySelector('.card-footer-delete')
+  .addEventListener('click', deleteButtonHandler);
 
   document
-  .querySelector('.update')
+  .querySelector('.card-footer-update')
   .addEventListener('click', updateButtonHandler);
 

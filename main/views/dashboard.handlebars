@@ -1,30 +1,44 @@
-<div class="row">
-  <div class="col-auto">
+<div>
+  <div>
     <h2>Your DashBoard</h2>
   </div>
 </div>
 
 {{#each posts as |post|}}
-  <div class = 'card'>
-    <h4>{{post.post_name}}{{post.current_date}}</h4>
+  <div class = "card">
+    <header class="card-header">
+      <p class="card-header-title">{{post.post_name}}{{post.current_date}}</p>
+    </header>
   </div>
 {{/each}}
 
-<div>
-   <button type="submit" class="btn btn-primary">New Post</button> 
-     <div> 
-       <form class="New-Post-form">
-         <div class="form-group">
-           <label for="post-name">Title:</label>
-           <input class="form-input" type="text" id="post-name" name="post-name" />
-         </div>
-         <div class="form-group">
-           <label for="content">Content:</label>
-           <input class="form-input" type="text" id="content" name="content" />
-         </div>
-         <div class="form-group">
-           <button type="submit" class="btn btn-primary">Create</button>
-         </div>
-       </form>  
-     </div>
+
+<div class="field">
+  <label class="label">Post Title:</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Title Name Here">
+  </div>
 </div>
+
+<div class="field">
+  <label class="label">Content:</label>
+  <div class="control">
+    <input class="input" type="text" placeholder="Content Here">
+  </div>
+</div>
+
+<div class="field is-grouped">
+  <p class="control">
+   <a class="button is-primary">
+    Create
+   </a>
+  </p>
+  <p class="control">
+    <a class="button is-light">
+      Cancel
+    </a>
+  </p>
+</div>
+
+<script src="../public/js/dashboard.js"></script>
+ 
