@@ -1,0 +1,17 @@
+[
+    {
+      "post_name": "new blog",
+      "post_content": "new to blogging",
+      "user_id": 1
+    },
+    {
+      "post_name": "hey",
+      "post_content": "hows it going",
+      "user_id": 2
+    },
+    {
+      "post_name": "just a blog",
+      "post_content": "lets blog",
+      "user_id": 3
+    }
+  ]
