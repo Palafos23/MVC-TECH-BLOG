@@ -11,7 +11,7 @@ router.post('/', async (req, res) => {
     }
 })
 
-//update comment route 
+//update post route 
 router.put('/:id', async (req, res) => {
     try {
         const post = await Post.update(req.body, {
@@ -25,7 +25,7 @@ router.put('/:id', async (req, res) => {
     }
 });
 
-//delete comment route
+//delete post route
 router.delete('/:id', async (req, res) => {
     try {
         const post = await Post.destroy({
