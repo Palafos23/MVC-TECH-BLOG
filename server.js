@@ -11,8 +11,19 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 
 const sess = {
-    
-  };
+  secret: 'Super secret secret',
+  cookie: {
+    maxAge: 2700000,
+    httpOnly: true,
+    secure: false,
+    sameSite: 'strict',
+  },
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
 
 //middleware
 app.use(session(sess));
