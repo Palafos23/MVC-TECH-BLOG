@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Blog!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+
+<body>
+  <div class="content is-medium">
+    <header>
+      <nav class="navbar">
+        <a class="navbar-item" href="/">Home</a>
+        <a class="navbar-item" href="/dashboard">DashBoard</a>
+        {{#if logged_in}}
+        <button class="no-button" id="logout">logout</button>
+        {{else}}
+        <a class="navbar-item" href="/login">Login</a>
+        {{/if}}
+      </nav>
+      <h1>
+        The Tech Blog
+      </h1>
+    </header>
+    <main>
+      {{{ body }}}
+    </main>
+  </div>
+  {{#if logged_in}}
+  <script src="../../public/js/logout.js"></script>
+  {{/if}}
+</body>
+
+</html>
+
