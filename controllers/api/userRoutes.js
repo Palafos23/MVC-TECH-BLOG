@@ -5,12 +5,14 @@ const { User } = require ('../../models');
 router.post('/', async (req, res) => {
     try {
         const newUser = await User.create(req.body);
+
         req.session.save(() => {
-        req.session.user_id = newUser.id; 
+        req.session.user_name = newUser.username; 
         req.session.logged_in = true;
         });
         
         const existingUser = await User.findOne({ where: { username: req.body.username}});
+        
         if(existingUser){
             res
             .status(400).json({message: 'Name taken, choose another'});
@@ -45,10 +47,10 @@ router.post('/login', async (req, res) => {
         }
     
         req.session.save(() => {
-          req.session.user_id = username.id;
+          req.session.user_name = username;
           req.session.logged_in = true;
           
-          res.json({ user: userData, message: 'You are now logged in!' });
+          res.json({ user: username, message: 'You are now logged in!' });
         });
     }catch (err) {
         res.status(400).json(err);

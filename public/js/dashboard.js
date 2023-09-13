@@ -1,4 +1,4 @@
-const postFormHandler = async (event) => {
+async function postFormHandler(event) {
     event.preventDefault();
 
     const postName = document.querySelector('.card-header').value.trim();

@@ -19,8 +19,9 @@ const postFormHandler = async (event) => {
     }
 }
 const deleteButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
+     const id = window.location.toString().split('/')[
+       window.location.toString().split('/').length - 1
+      ]; 
   
       const response = await fetch(`/api/post/${id}`, {
         method: 'DELETE',
@@ -31,14 +32,18 @@ const deleteButtonHandler = async (event) => {
       } else {
         alert('Failed to delete project');
       }
-    }
-  };
+    };
+
 const updateButtonHandler = async (event) => {
-    if (event.target.hasAttribute('data-id')) {
-      const id = event.target.getAttribute('data-id');
-  
-      const response = await fetch(`/api/post/${id}`, {
+  const postContent = document.querySelector('.card-content').value.trim();
+    
+    const id = window.location.toString().split('/')[
+    window.location.toString().split('/').length - 1
+    ];
+    
+    const response = await fetch(`/api/post/${id}`, {
         method: 'PUT',
+        body: JSON.stringify({ postContent }),
       });
   
       if (response.ok) {
@@ -46,8 +51,7 @@ const updateButtonHandler = async (event) => {
       } else {
         alert('Failed to update project');
       }
-    }
-  };
+    };
   
   document
   .querySelector('.card')
