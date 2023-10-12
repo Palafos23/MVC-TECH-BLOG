@@ -1,4 +1,4 @@
-# 14 Model-View-Controller (MVC): Tech Blog
+# MVC Tech Blog
 
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
